@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Application Details
 |               |
 | ------------- |
@@ -34,3 +35,7 @@ An SAP Fiori application.
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
 
+=======
+# hcm_kpi
+HCM KPI Prototype
+>>>>>>> 0ddc67f6fc06cca784605ee19ede484bdbe1a925
