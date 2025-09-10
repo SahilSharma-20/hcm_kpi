@@ -1,0 +1,50 @@
+{
+  "employeeStrength": [
+    { "category": "A", "count": 120 },
+    { "category": "B", "count": 150 },
+    { "category": "C", "count": 90 },
+    { "category": "D", "count": 80 },
+    { "category": "E", "count": 70 },
+    { "category": "F", "count": 60 },
+    { "category": "G", "count": 40 },
+    { "category": "H", "count": 20 },
+    { "category": "I", "count": 10 },
+    { "category": "J", "count": 10 }
+  ],
+  "plantStrength": [
+    { "plant": "Plant 1", "category": "A", "count": 40 },
+    { "plant": "Plant 1", "category": "B", "count": 30 },
+    { "plant": "Plant 1", "category": "C", "count": 20 },
+    { "plant": "Plant 1", "category": "D", "count": 15 },
+    { "plant": "Plant 2", "category": "A", "count": 50 },
+    { "plant": "Plant 2", "category": "B", "count": 25 },
+    { "plant": "Plant 2", "category": "C", "count": 20 },
+    { "plant": "Plant 2", "category": "E", "count": 10 },
+    { "plant": "Plant 3", "category": "B", "count": 60 },
+    { "plant": "Plant 3", "category": "F", "count": 20 },
+    { "plant": "Plant 4", "category": "A", "count": 30 },
+    { "plant": "Plant 4", "category": "C", "count": 25 },
+    { "plant": "Plant 4", "category": "D", "count": 10 },
+    { "plant": "Plant 5", "category": "B", "count": 40 },
+    { "plant": "Plant 5", "category": "E", "count": 15 },
+    { "plant": "Plant 6", "category": "C", "count": 35 },
+    { "plant": "Plant 6", "category": "A", "count": 25 },
+    { "plant": "Plant 7", "category": "F", "count": 30 },
+    { "plant": "Plant 7", "category": "D", "count": 20 },
+    { "plant": "Plant 8", "category": "G", "count": 10 }
+  ],
+  "turnover": {
+    "nextMonth": [
+      { "category": "A", "hired": 5, "transferred": 2, "superannuating": 1 },
+      { "category": "B", "hired": 6, "transferred": 3, "superannuating": 2 }
+    ],
+    "past4Quarters": [
+      { "category": "A", "type": "Hired", "Q1": 4, "Q2": 7, "Q3": 5, "Q4": 6 },
+      { "category": "A", "type": "Transferred", "Q1": 5, "Q2": 6, "Q3": 3, "Q4": 4 },
+      { "category": "A", "type": "Superannuating", "Q1": 2, "Q2": 3, "Q3": 2, "Q4": 3 },
+      { "category": "B", "type": "Hired", "Q1": 6, "Q2": 8, "Q3": 7, "Q4": 9 },
+      { "category": "B", "type": "Transferred", "Q1": 4, "Q2": 5, "Q3": 6, "Q4": 7 },
+      { "category": "B", "type": "Superannuating", "Q1": 3, "Q2": 4, "Q3": 4, "Q4": 5 }
+    ]
+  }
+}

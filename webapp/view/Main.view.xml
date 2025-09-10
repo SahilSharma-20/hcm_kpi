@@ -1,0 +1,145 @@
+<mvc:View
+    controllerName="hcm.hcmkpi.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
+
+    <Page id="page" title="HCM KPI Dashboard">
+        <content>
+            <VBox class="sapUiSmallMargin">
+
+                <!-- Employee Strength -->
+                <Panel headerText="Employee Strength (Category-wise)">
+                    <viz:VizFrame
+                        id="empStrengthChart"
+                        uiConfig="{applicationSet:'fiori'}"
+                        vizType="column"
+                        height="300px"
+                        width="100%"
+                        vizProperties='{
+                            "plotArea": {"dataLabel": {"visible": true}},
+                            "tooltip": {"visible": true},
+                            "title": {"visible": true, "text": "Employee Strength by Category"}
+                        }'>
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset data="{hcmData>/employeeStrength}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition name="Category" value="{hcmData>category}" />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition name="Count" value="{hcmData>count}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+                        <viz:feeds>
+                            <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Category"/>
+                            <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Count"/>
+                        </viz:feeds>
+                    </viz:VizFrame>
+                </Panel>
+
+                <!-- Plant Strength -->
+                <Panel headerText="Plant-wise Employee Strength">
+                    <viz:VizFrame
+                        id="plantStrengthChart"
+                        uiConfig="{applicationSet:'fiori'}"
+                        vizType="stacked_bar"
+                        height="300px"
+                        width="100%"
+                        vizProperties='{
+                            "plotArea": {"dataLabel": {"visible": true}},
+                            "tooltip": {"visible": true},
+                            "title": {"visible": true, "text": "Plant-wise Employee Strength"}
+                        }'>
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset data="{hcmData>/plantStrength}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition name="Plant" value="{hcmData>plant}" />
+                                    <viz.data:DimensionDefinition name="Category" value="{hcmData>category}" />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition name="Count" value="{hcmData>count}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+                        <viz:feeds>
+                            <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Plant"/>
+                            <viz.feeds:FeedItem uid="color" type="Dimension" values="Category"/>
+                            <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Count"/>
+                        </viz:feeds>
+                    </viz:VizFrame>
+                </Panel>
+
+                <!-- Employee Turnover Next Month -->
+                <Panel headerText="Employee Turnover (Next Month)">
+                    <viz:VizFrame
+                        id="turnoverNextMonthChart"
+                        uiConfig="{applicationSet:'fiori'}"
+                        vizType="column"
+                        height="300px"
+                        width="100%"
+                        vizProperties='{
+                            "plotArea": {"dataLabel": {"visible": true}},
+                            "tooltip": {"visible": true},
+                            "title": {"visible": true, "text": "Next Month Employee Turnover"}
+                        }'>
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset data="{hcmData>/turnover/nextMonth}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition name="Category" value="{hcmData>category}" />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition name="Hired" value="{hcmData>hired}" />
+                                    <viz.data:MeasureDefinition name="Transferred" value="{hcmData>transferred}" />
+                                    <viz.data:MeasureDefinition name="Superannuating" value="{hcmData>superannuating}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+                        <viz:feeds>
+                            <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Category"/>
+                            <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Hired,Transferred,Superannuating"/>
+                        </viz:feeds>
+                    </viz:VizFrame>
+                </Panel>
+
+                <!-- Employee Turnover Past 4 Quarters -->
+                <Panel headerText="Employee Turnover (Past 4 Quarters)">
+                    <viz:VizFrame
+                        id="turnoverPast4QChart"
+                        uiConfig="{applicationSet:'fiori'}"
+                        vizType="stacked_bar"
+                        height="350px"
+                        width="100%"
+                        vizProperties='{
+                            "plotArea": {"dataLabel": {"visible": true}},
+                            "tooltip": {"visible": true},
+                            "title": {"visible": true, "text": "Past 4 Quarters Turnover by Type"}
+                        }'>
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset data="{hcmData>/turnover/past4Quarters}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition name="Category" value="{hcmData>category}" />
+                                    <viz.data:DimensionDefinition name="Type" value="{hcmData>type}" />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition name="Q1" value="{hcmData>Q1}" />
+                                    <viz.data:MeasureDefinition name="Q2" value="{hcmData>Q2}" />
+                                    <viz.data:MeasureDefinition name="Q3" value="{hcmData>Q3}" />
+                                    <viz.data:MeasureDefinition name="Q4" value="{hcmData>Q4}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+                        <viz:feeds>
+                            <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Category"/>
+                            <viz.feeds:FeedItem uid="color" type="Dimension" values="Type"/>
+                            <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Q1,Q2,Q3,Q4"/>
+                        </viz:feeds>
+                    </viz:VizFrame>
+                </Panel>
+
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
