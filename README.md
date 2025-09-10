@@ -1,5 +1,14 @@
-<<<<<<< HEAD
+
 ## Application Details
+
+HCM KPI Prototype
+
+<img width="1366" height="410" alt="image" src="https://github.com/user-attachments/assets/ef3c04bf-d96b-41c6-9ac1-747159f1823b" />
+<img width="1365" height="590" alt="image" src="https://github.com/user-attachments/assets/ada751e7-209c-444d-9fd0-75a71ecc80fc" />
+<img width="1366" height="415" alt="image" src="https://github.com/user-attachments/assets/a21b1206-0d8d-46f1-b185-524e90a65d0f" />
+
+
+
 |               |
 | ------------- |
 |**Generation Date and Time**<br>Tue Sep 09 2025 05:14:35 GMT+0000 (Coordinated Universal Time)|
